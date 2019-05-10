@@ -7,7 +7,7 @@ class Map extends React.Component{
         </div>
       );
     }
-}
 
+}
 
 export default Map;
