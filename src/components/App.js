@@ -1,51 +1,33 @@
 import React from 'react';
-import Header from './header.js';
-import Map from './map.js';
-import Search from './search-form.js'
-import Result from './result.js'
+import Header from './header';
+import SearchFrom from './search-form';
+import Map from './map';
+import SearchResult from './search-results';
 
-
-class Main extends React.Component {
-  constructor(props) {
+class App extends React.Component{
+  constructor(props){
     super(props);
-
-    this.state = {
-    location:{}
-   
-    }
-    
+    this.state = {};
   }
-
-
-  render() {
-    return (
+  
+  setLocation = (location) =>{
+    this.setState({
+      lat: location.latitude,
+      lng: location.longitude,
+      search_query: location.search_query,
+      formatted_query: location.formatted_query,
+    })
+  }
+  render(){
+    return(
       <React.Fragment>
-        <Search promt= ""/>
-        <Map location ={this.state.location}/>
-        <Result/>
-        <Result/>
-        <Result/>
-        <Result/>
-        <Result/>
+        <Header/>
+        <SearchFrom setLocation={this.setLocation}/>
+        <Map lat={this.state.lat} lng = {this.state.lng} />
+        <SearchResult query={this.state.search_query}/>
       </React.Fragment>
     );
   }
-  
 }
-
-
-class App extends React.Component {
-  render() {
-    return (
-      <React.Fragment>
-        <Header />
-        <Main />
-      </React.Fragment>
-    )
-  }
-}
-
-
-
 
 export default App;
