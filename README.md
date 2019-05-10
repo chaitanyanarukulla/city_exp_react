@@ -1,5 +1,5 @@
 
-##Number and name of feature: _____feature1___________________________
+##Number and name of feature: _____feature1__________
 
 Estimate of time needed to complete: __60min___
 
@@ -8,6 +8,26 @@ Start time: 0900
 Finish time: ___1015_
 
 Actual time needed to complete: ___75min__
+
+##Number and name of feature: __________feature2____________
+
+Estimate of time needed to complete: ___180min__
+
+Start time: ___0800__
+
+Finish time: _1400____
+
+Actual time needed to complete: __12 hrs___
+
+##Number and name of feature: _________feature3______________
+
+Estimate of time needed to complete: __2hrs___
+
+Start time: __1100___
+
+Finish time: __1400___
+
+Actual time needed to complete: __4hrs___
 
 ## Available Scripts
 

@@ -1,0 +1,39 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5em;
+  text-indent: 5px;
+}
+
+li {
+  border-bottom: 2px solid #555;
+}
+#map {
+  margin-top: 10px;
+  border: 2px solid #4484CE;
+}
+
+section * {
+  padding: 0 2px;
+}
+
+span {
+  font-weight: bold;
+}
+
+section > p {
+  text-align: center;
+  font-style: italic;
+  margin-top: 0.3em; 
+}
+/* Style the yelp images */
+div section:nth-child(2) img {
+  height: 75px;
+  padding-bottom: 3px;
+}
+
+/* Style the movie images */
+div section:nth-child(4) img {
+  height: 150px;
+}
