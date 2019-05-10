@@ -1,39 +1,35 @@
-import React from 'react'; 
+import React from 'react';
 import superagent from 'superagent';
 
-
-class Search extends React.Component{
-  constructor (props){
+class SearchForm extends React.Component{
+  constructor(props){
     super(props);
-    this.state = {
-
+    this.state ={
+      queryData: '',
     };
-    }
+  }
 
-    handleChange = event => {
-      let location = event.target.value;
-      this.setState({location});
-      console.log(location)
-    };
+  handleChange = e => {
+    let queryData = e.target.value;
+    this.setState({queryData});
+  }
 
-
-    handleSubmit = async (event) => {
-      event.preventDefault();
-      let url = `https://city-explorer-backend.herokuapp.com/location?data=${this.state.location}`;
-      let data = await superagent.get(url);
-      // console.log(data);
-      this.setState({ databody: data.body});
-      // console.log(this.state);
-    };
-
+  handleSubmit = async e =>{
+    e.preventDefault();
+    let url = `https://aqueous-springs-46846.herokuapp.com/location`;
+    let location = await superagent.get(url).query({data: this.state.queryData});
+    this.props.setLocation(location.body);
+  }
   render(){
     return(
+      <div>
         <form onSubmit={this.handleSubmit}>
-        <input type="text" value ={this.state.value} onChange = {this.handleChange}/>
-        <input type="submit" value="Submit"/>
+          <input onChange={this.handleChange}></input>
+          <button>Explorer</button>
         </form>
-     );
+      </div>
+    );
   }
 }
 
-export default Search;
+export default SearchForm;
