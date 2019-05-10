@@ -19,8 +19,11 @@ class Weather extends React.Component{
     this.setState({renderResults});
   }
 
-  componentDidMount(){
-    this.weatherData();
+  componentDidUpdate(prevProps){
+    if(this.props.query !== prevProps.query){
+
+      this.weatherData();
+    }
   }
   render(){
     return(
